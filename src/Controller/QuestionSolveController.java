@@ -167,10 +167,6 @@ public class QuestionSolveController implements TaskEnder, QuestionSelector {
             nextButton.setDisable(true);
     }
 
-    private void setMarkedForReview(int i) {
-
-    }
-
     @FXML
     public void setMarkReview(Event event) {
         if (questionReview.isMarkedForReview(counter)) {

@@ -30,7 +30,9 @@ public class ExamTimer {
                     timeCalculated = ExamTimer.this.toString();
                     Platform.runLater(() -> label.setText(timeCalculated));
                 } else {
-                    taskEnder.endTask();
+                    System.out.println("I was called");
+                    Platform.runLater(() -> taskEnder.endTask());
+                    stopTimer();
                 }
             }
         };
