@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="Controller.QuestionSolveController">
+    <top>
+        <MenuBar prefHeight="25.0" prefWidth="536.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About"/>
+                        <MenuItem mnemonicParsing="false" onAction="#showStudentInfo" text="About Student"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="questionNumber" text="Question Number x"/>
+                <HBox prefHeight="134.0" prefWidth="578.0">
+                    <VBox.margin>
+                        <Insets top="5.0"/>
+                    </VBox.margin>
+                    <children>
+                        <Label fx:id="question" text="Label">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="578.0">
+                    <children>
+                        <RadioButton fx:id="radioButton1" mnemonicParsing="false" onAction="#setOption" text="Option 1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="optionBox"/>
+                            </toggleGroup>
+                        </RadioButton>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets top="5.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="201.0" prefHeight="40.0" prefWidth="578.0">
+                    <children>
+                        <RadioButton fx:id="radioButton2" mnemonicParsing="false" onAction="#setOption" text="Option 2"
+                                     toggleGroup="$optionBox">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </RadioButton>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="241.0" prefHeight="40.0" prefWidth="578.0">
+                    <children>
+                        <RadioButton fx:id="radioButton3" mnemonicParsing="false" onAction="#setOption" text="Option 3"
+                                     toggleGroup="$optionBox">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </RadioButton>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="281.0" prefHeight="40.0" prefWidth="578.0">
+                    <children>
+                        <RadioButton fx:id="radioButton4" mnemonicParsing="false" onAction="#setOption" text="Option 4"
+                                     toggleGroup="$optionBox">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </RadioButton>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="46.0" prefWidth="578.0">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#previousQuestion" text="Back"/>
+                        <Button fx:id="markButton" mnemonicParsing="false" onAction="#setMarkReview"
+                                text="Mark for review">
+                            <HBox.margin>
+                                <Insets left="15.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextQuestion"
+                                text="Next Question">
+                            <HBox.margin>
+                                <Insets left="15.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button layoutX="338.0" layoutY="20.0" mnemonicParsing="false" onAction="#endExam"
+                                text="End Exam">
+                            <HBox.margin>
+                                <Insets left="15.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="5.0"/>
+            </padding>
+        </VBox>
+    </center>
+    <right>
+        <VBox alignment="TOP_CENTER" prefHeight="375.0" prefWidth="212.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="timer" text="00:00">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
+                <ScrollPane hbarPolicy="NEVER" prefHeight="307.0" prefWidth="212.0" vbarPolicy="ALWAYS">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="200.0">
+                            <children>
+                                <GridPane fx:id="gridPane" prefHeight="800.0" prefWidth="193.0"
+                                          AnchorPane.bottomAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </right>
+    <padding>
+        <Insets bottom="10.0" right="10.0"/>
+    </padding>
+</BorderPane>
