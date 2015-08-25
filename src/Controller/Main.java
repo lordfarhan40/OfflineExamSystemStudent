@@ -35,7 +35,7 @@ public class Main extends Application {
             //Read the exam from the file
             MainExam mainExam = FileWorker.readFromFile(initFile, "");
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../View/StudentInfo.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("StudentInfo.fxml"));
             Parent parent = fxmlLoader.load();
             StudentInfoController studentInfoController = fxmlLoader.getController();
 
