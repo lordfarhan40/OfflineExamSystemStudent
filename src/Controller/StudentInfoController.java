@@ -47,7 +47,7 @@ public class StudentInfoController {
     public void closeExam(Event e) {
         try {
             appInitialise.unloadExam();
-            Parent parent = FXMLLoader.load(getClass().getResource("../View/Welcome.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             Stage primaryStage = getStage(examName);
             primaryStage.setScene(new Scene(parent));
         } catch (Exception exception) {
@@ -61,7 +61,7 @@ public class StudentInfoController {
         try {
             if (setStudentInfo()) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("../View/QuestionSolve.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("QuestionSolve.fxml"));
                 Parent parent = fxmlLoader.load();
                 getStage((Node) e.getSource()).setScene(new Scene(parent));
                 QuestionSolveController questionSolveController = fxmlLoader.getController();
@@ -88,7 +88,7 @@ public class StudentInfoController {
         try {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../View/InstructionWindow.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("InstructionWindow.fxml"));
             Parent parent = fxmlLoader.load();
             InstructionWindowController instructionWindowController = fxmlLoader.getController();
             instructionWindowController.setInstruction(mainExam.getExamInstructions());

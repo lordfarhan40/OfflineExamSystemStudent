@@ -98,7 +98,7 @@ public class WelcomeController {
             try {
                 MainExam mainExam = FileWorker.readFromFile(file, "");
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("../View/StudentInfo.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("StudentInfo.fxml"));
                 Parent parent = fxmlLoader.load();
                 StudentInfoController studentInfoController = fxmlLoader.getController();
                 studentInfoController.setMainExam(mainExam);
@@ -119,7 +119,7 @@ public class WelcomeController {
                 return;
             }
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../View/StudentInfo.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("StudentInfo.fxml"));
             Parent parent = fxmlLoader.load();
             StudentInfoController studentInfoController = fxmlLoader.getController();
             studentInfoController.setMainExam(mainExam);

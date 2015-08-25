@@ -181,7 +181,7 @@ public class QuestionSolveController implements TaskEnder, QuestionSelector {
     public void endExam(Event e) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../View/EndExam.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("EndExam.fxml"));
             Parent parent = fxmlLoader.load();
             Stage stage = getStage();
             stage.setScene(new Scene(parent));

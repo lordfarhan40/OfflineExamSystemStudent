@@ -45,7 +45,7 @@ public class Main extends Application {
             primaryStage.show();
         } else {
             //If either the exam that is loaded in Protected or there is none loaded
-            Parent parent = FXMLLoader.load(getClass().getResource("../View/Welcome.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
             primaryStage.setScene(new Scene(parent));
             primaryStage.show();
         }
